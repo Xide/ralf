@@ -72,3 +72,39 @@ where
         write!(f, "StateMachine")
     }
 }
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use action::Action;
+
+    struct IncrementReducer {}
+
+    impl Reducer<u32> for IncrementReducer {
+        fn process(&self, state: u32, action: &Action) -> u32 {
+            match action.cat {
+                "increment" => state + 1,
+                _ => state,
+            }
+        }
+    }
+
+    #[test]
+    fn can_get_state() {
+        let sm = StateMachine::new(0);
+        assert_eq!(sm.get_state(), 0);
+    }
+
+    #[test]
+    fn reducer_works() {
+        let mut sm = StateMachine::new(0);
+
+        sm.push_reducer(&IncrementReducer {});
+
+        assert_eq!(sm.get_state(), 0);
+        sm.process(&Action::new("increment", &[]));
+        assert_eq!(sm.get_state(), 1);
+    }
+
+}

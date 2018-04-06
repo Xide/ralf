@@ -45,3 +45,27 @@ impl<T> Reducer<T> for LoggingReducer {
         state
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::PureReducer;
+    use action::Action;
+    use state_machine::StateMachine;
+
+    fn pure_reducer_increment(x: u32, _a: &Action) -> u32 {
+        x + 1
+    }
+
+    #[test]
+    fn can_create_reducer_from_function() {
+        let r : PureReducer<u32> = PureReducer { f: pure_reducer_increment };
+
+        let mut sm = StateMachine::new(0);
+        sm.push_reducer(&r);
+
+        assert_eq!(sm.get_state(), 0);
+        sm.process(&Action::new("some_action", &[]));
+        assert_eq!(sm.get_state(), 1);
+    }
+
+}
