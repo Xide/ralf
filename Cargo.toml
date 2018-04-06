@@ -2,6 +2,13 @@
 name = "ralf"
 version = "0.1.0"
 authors = ["Germain <germain.gau@gmail.com>"]
+repository = "https://github.com/Xide/ralf.git"
+homepage = "https://github.com/Xide/ralf.git"
+license = "MIT"
+readme = "README.md"
+documentation = ""
+description = "Distributed state machine built on top of raft-rs"
+
 
 [dependencies]
 raft = "0.1.0"
