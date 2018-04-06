@@ -10,11 +10,10 @@
     <title>lib.rs.html -- source</title>
 
     <link rel="stylesheet" type="text/css" href="../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../rustdoc.css"
-          id="mainThemeStyle">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
     
     <link rel="stylesheet" type="text/css" href="../../dark.css">
-    <link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
     <script src="../../storage.js"></script>
     
 
@@ -81,18 +80,12 @@
 <span id="24">24</span>
 <span id="25">25</span>
 <span id="26">26</span>
-<span id="27">27</span>
-<span id="28">28</span>
-<span id="29">29</span>
 </pre><pre class="rust ">
 <span class="doccomment">//! `Ralf`</span>
 <span class="doccomment">//! Distributed state machine with raft</span>
 
-<span class="attribute">#![<span class="ident">deny</span>(<span class="ident">missing_docs</span>,
-        <span class="ident">missing_debug_implementations</span>,
-        <span class="ident">trivial_casts</span>, <span class="ident">trivial_numeric_casts</span>,
-        <span class="ident">unsafe_code</span>,
-        <span class="ident">unused_import_braces</span>, <span class="ident">unused_qualifications</span>)]</span>
+<span class="attribute">#![<span class="ident">deny</span>(<span class="ident">missing_docs</span>, <span class="ident">missing_debug_implementations</span>, <span class="ident">trivial_casts</span>, <span class="ident">trivial_numeric_casts</span>,
+        <span class="ident">unsafe_code</span>, <span class="ident">unused_import_braces</span>, <span class="ident">unused_qualifications</span>)]</span>
 
 <span class="kw">mod</span> <span class="ident">state</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">state</span>::<span class="ident">State</span>;
@@ -101,7 +94,7 @@
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">action</span>::<span class="ident">Action</span>;
 
 <span class="kw">mod</span> <span class="ident">reducer</span>;
-<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">reducer</span>::{<span class="ident">Reducer</span>, <span class="ident">LoggingReducer</span>};
+<span class="kw">pub</span> <span class="kw">use</span> <span class="ident">reducer</span>::{<span class="ident">LoggingReducer</span>, <span class="ident">Reducer</span>};
 
 <span class="kw">mod</span> <span class="ident">state_machine</span>;
 <span class="kw">pub</span> <span class="kw">use</span> <span class="ident">state_machine</span>::<span class="ident">StateMachine</span>;
