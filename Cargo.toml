@@ -1,0 +1,8 @@
+[package]
+name = "ralf"
+version = "0.1.0"
+authors = ["Germain <germain.gau@gmail.com>"]
+
+[dependencies]
+raft = "0.1.0"
+log = "0.4"
