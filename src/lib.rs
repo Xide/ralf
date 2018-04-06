@@ -1,11 +1,8 @@
 //! `Ralf`
 //! Distributed state machine with raft
 
-#![deny(missing_docs,
-        missing_debug_implementations,
-        trivial_casts, trivial_numeric_casts,
-        unsafe_code,
-        unused_import_braces, unused_qualifications)]
+#![deny(missing_docs, missing_debug_implementations, trivial_casts, trivial_numeric_casts,
+        unsafe_code, unused_import_braces, unused_qualifications)]
 
 mod state;
 pub use state::State;
@@ -14,7 +11,7 @@ mod action;
 pub use action::Action;
 
 mod reducer;
-pub use reducer::{Reducer, LoggingReducer};
+pub use reducer::{LoggingReducer, Reducer};
 
 mod state_machine;
 pub use state_machine::StateMachine;

@@ -8,19 +8,25 @@ use state::State;
 use action::Action;
 
 /// State machine with a state of type `T`
-pub struct StateMachine<'a, T> where T: 'a + Copy + Clone {
+pub struct StateMachine<'a, T>
+where
+    T: 'a + Copy + Clone,
+{
     reducers: Vec<Box<&'a Reducer<T>>>,
-    state: State<T>
+    state: State<T>,
 }
 
-impl<'a, T> StateMachine<'a, T> where T: 'a + Copy + Clone {
+impl<'a, T> StateMachine<'a, T>
+where
+    T: 'a + Copy + Clone,
+{
     /// Create a new state machine from an initial state
     /// Note: The returned machine will be empty, so actions won't have any
     /// effects until reducers are added.
     pub fn new(initial_state: T) -> StateMachine<'a, T> {
         StateMachine {
             reducers: Vec::new(),
-            state: State::new(&initial_state)
+            state: State::new(&initial_state),
         }
     }
 
@@ -49,15 +55,19 @@ impl<'a, T> StateMachine<'a, T> where T: 'a + Copy + Clone {
     }
 }
 
-
-impl<'a, T> fmt::Debug for StateMachine<'a, T> where T: 'a + Copy + Clone {
+impl<'a, T> fmt::Debug for StateMachine<'a, T>
+where
+    T: 'a + Copy + Clone,
+{
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "StateMachine {{ reducers: {:?} }}", self.reducers.len())
     }
 }
 
-
-impl<'a, T> fmt::Display for StateMachine<'a, T> where T: 'a + Copy + Clone {
+impl<'a, T> fmt::Display for StateMachine<'a, T>
+where
+    T: 'a + Copy + Clone,
+{
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "StateMachine")
     }

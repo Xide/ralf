@@ -2,20 +2,23 @@
 //! Allow immutable query and mutation ofthe underlying data
 use std::cell::Cell;
 
-
 /// `State` is a wrapper around your state, allowing querying and modification
-#[derive(
-    Debug,
-)]
-pub struct State<T> where T: Copy + Clone {
+#[derive(Debug)]
+pub struct State<T>
+where
+    T: Copy + Clone,
+{
     state: Cell<T>,
 }
 
-impl<T> State<T> where T: Copy + Clone {
+impl<T> State<T>
+where
+    T: Copy + Clone,
+{
     /// Create a new state from an initial value
     pub fn new(initial_state: &T) -> State<T> {
         State::<T> {
-            state: Cell::new(*initial_state)
+            state: Cell::new(*initial_state),
         }
     }
 

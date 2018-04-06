@@ -10,15 +10,12 @@ use action::Action;
 pub trait Reducer<T> {
     /// Take the ownership of the state, and return the state after application of the action
     fn process(&self, state: T, action: &Action) -> T;
-
 }
 
 impl<T> From<fn(T, &Action) -> T> for PureReducer<T> {
     /// Create a pure reducer from a compatible function
     fn from(f: fn(T, &Action) -> T) -> PureReducer<T> {
-        PureReducer {
-            f
-        }
+        PureReducer { f }
     }
 }
 

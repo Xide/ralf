@@ -5,7 +5,6 @@ extern crate ralf;
 
 use ralf::*;
 
-
 /// Simple reducer incrementing a u32 state only if the action category is "increment"
 /// # Examples
 /// ```rust
@@ -18,7 +17,7 @@ impl Reducer<u32> for IncrementReducer {
     fn process(&self, state: u32, action: &Action) -> u32 {
         match action.cat {
             "increment" => state + 1,
-            _ => state
+            _ => state,
         }
     }
 }
@@ -34,8 +33,7 @@ impl Reducer<u32> for IncrementReducer {
 fn main() {
     let mut sm = StateMachine::new(0);
 
-    sm
-        .push_reducer(&IncrementReducer {})
+    sm.push_reducer(&IncrementReducer {})
         .push_reducer(&LoggingReducer {});
 
     sm.process(&Action::new("invalid", &[]));
