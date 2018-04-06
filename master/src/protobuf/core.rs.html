@@ -10,10 +10,11 @@
     <title>core.rs.html -- source</title>
 
     <link rel="stylesheet" type="text/css" href="../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css"
+          id="mainThemeStyle">
     
     <link rel="stylesheet" type="text/css" href="../../dark.css">
-    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle">
     <script src="../../storage.js"></script>
     
 
@@ -448,7 +449,7 @@
     <span class="kw">fn</span> <span class="ident">new</span>() <span class="op">-&gt;</span> <span class="self">Self</span>;
 
     <span class="comment">// http://stackoverflow.com/q/20342436/15018</span>
-    <span class="kw">fn</span> <span class="ident">descriptor_static</span>(_: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">MessageDescriptor</span> {
+    <span class="kw">fn</span> <span class="ident">descriptor_static</span>(<span class="kw">_</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">MessageDescriptor</span> {
         <span class="macro">panic</span><span class="macro">!</span>(
             <span class="string">&quot;descriptor_static is not implemented for message, \
              LITE_RUNTIME must be used&quot;</span>
@@ -481,7 +482,7 @@
     }
 
     <span class="comment">// http://stackoverflow.com/q/20342436/15018</span>
-    <span class="kw">fn</span> <span class="ident">enum_descriptor_static</span>(_: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">EnumDescriptor</span> {
+    <span class="kw">fn</span> <span class="ident">enum_descriptor_static</span>(<span class="kw">_</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="self">Self</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> <span class="ident">EnumDescriptor</span> {
         <span class="macro">panic</span><span class="macro">!</span>();
     }
 }

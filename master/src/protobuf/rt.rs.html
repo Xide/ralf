@@ -10,10 +10,11 @@
     <title>rt.rs.html -- source</title>
 
     <link rel="stylesheet" type="text/css" href="../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css"
+          id="mainThemeStyle">
     
     <link rel="stylesheet" type="text/css" href="../../dark.css">
-    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle">
     <script src="../../storage.js"></script>
     
 
@@ -1145,7 +1146,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
         <span class="ident">WireTypeFixed64</span> <span class="op">=&gt;</span> <span class="number">8</span>,
         <span class="ident">WireTypeFixed32</span> <span class="op">=&gt;</span> <span class="number">4</span>,
         <span class="ident">WireTypeVarint</span> <span class="op">=&gt;</span> <span class="ident">value</span>.<span class="ident">len_varint</span>(),
-        _ <span class="op">=&gt;</span> <span class="macro">panic</span><span class="macro">!</span>(),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="macro">panic</span><span class="macro">!</span>(),
     }
 }
 
@@ -1220,7 +1221,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="ident">target</span>.<span class="ident">push</span>(<span class="ident">is</span>.<span class="ident">read_int32</span>()<span class="question-mark">?</span>);
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1235,7 +1236,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="ident">target</span>.<span class="ident">push</span>(<span class="ident">is</span>.<span class="ident">read_int64</span>()<span class="question-mark">?</span>);
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1250,7 +1251,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="ident">target</span>.<span class="ident">push</span>(<span class="ident">is</span>.<span class="ident">read_uint32</span>()<span class="question-mark">?</span>);
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1265,7 +1266,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="ident">target</span>.<span class="ident">push</span>(<span class="ident">is</span>.<span class="ident">read_uint64</span>()<span class="question-mark">?</span>);
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1280,7 +1281,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="ident">target</span>.<span class="ident">push</span>(<span class="ident">is</span>.<span class="ident">read_sint32</span>()<span class="question-mark">?</span>);
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1295,7 +1296,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="ident">target</span>.<span class="ident">push</span>(<span class="ident">is</span>.<span class="ident">read_sint64</span>()<span class="question-mark">?</span>);
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1310,7 +1311,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="ident">target</span>.<span class="ident">push</span>(<span class="ident">is</span>.<span class="ident">read_fixed32</span>()<span class="question-mark">?</span>);
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1325,7 +1326,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="ident">target</span>.<span class="ident">push</span>(<span class="ident">is</span>.<span class="ident">read_fixed64</span>()<span class="question-mark">?</span>);
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1340,7 +1341,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="ident">target</span>.<span class="ident">push</span>(<span class="ident">is</span>.<span class="ident">read_sfixed32</span>()<span class="question-mark">?</span>);
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1355,7 +1356,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="ident">target</span>.<span class="ident">push</span>(<span class="ident">is</span>.<span class="ident">read_sfixed64</span>()<span class="question-mark">?</span>);
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1370,7 +1371,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="ident">target</span>.<span class="ident">push</span>(<span class="ident">is</span>.<span class="ident">read_double</span>()<span class="question-mark">?</span>);
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1385,7 +1386,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="ident">target</span>.<span class="ident">push</span>(<span class="ident">is</span>.<span class="ident">read_float</span>()<span class="question-mark">?</span>);
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1400,7 +1401,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="ident">target</span>.<span class="ident">push</span>(<span class="ident">is</span>.<span class="ident">read_bool</span>()<span class="question-mark">?</span>);
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1417,7 +1418,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="ident">target</span>.<span class="ident">push</span>(<span class="ident">is</span>.<span class="ident">read_enum</span>()<span class="question-mark">?</span>);
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1475,7 +1476,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
         <span class="ident">WireTypeVarint</span> <span class="op">=&gt;</span> {
             <span class="ident">read_enum_with_unknown_fields_into</span>(<span class="ident">is</span>, <span class="op">|</span><span class="ident">e</span><span class="op">|</span> <span class="ident">target</span>.<span class="ident">push</span>(<span class="ident">e</span>), <span class="ident">field_number</span>, <span class="ident">unknown_fields</span>)
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1532,7 +1533,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="kw">let</span> <span class="ident">tmp</span> <span class="op">=</span> <span class="ident">target</span>.<span class="ident">push_default</span>();
             <span class="ident">is</span>.<span class="ident">read_string_into</span>(<span class="ident">tmp</span>)
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1547,7 +1548,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="ident">target</span>.<span class="ident">push</span>(<span class="ident">is</span>.<span class="ident">read_carllerche_chars</span>()<span class="question-mark">?</span>);
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1561,7 +1562,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="kw">let</span> <span class="ident">tmp</span> <span class="op">=</span> <span class="ident">target</span>.<span class="ident">set_default</span>();
             <span class="ident">is</span>.<span class="ident">read_string_into</span>(<span class="ident">tmp</span>)
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1576,7 +1577,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="kw-2">*</span><span class="ident">target</span> <span class="op">=</span> <span class="prelude-val">Some</span>(<span class="ident">is</span>.<span class="ident">read_carllerche_chars</span>()<span class="question-mark">?</span>);
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1587,7 +1588,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
 ) <span class="op">-&gt;</span> <span class="ident">ProtobufResult</span><span class="op">&lt;</span>()<span class="op">&gt;</span> {
     <span class="kw">match</span> <span class="ident">wire_type</span> {
         <span class="ident">WireTypeLengthDelimited</span> <span class="op">=&gt;</span> <span class="ident">is</span>.<span class="ident">read_string_into</span>(<span class="ident">target</span>),
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1602,7 +1603,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="kw-2">*</span><span class="ident">target</span> <span class="op">=</span> <span class="ident">is</span>.<span class="ident">read_carllerche_chars</span>()<span class="question-mark">?</span>;
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1616,7 +1617,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="kw">let</span> <span class="ident">tmp</span> <span class="op">=</span> <span class="ident">target</span>.<span class="ident">push_default</span>();
             <span class="ident">is</span>.<span class="ident">read_bytes_into</span>(<span class="ident">tmp</span>)
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1631,7 +1632,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="ident">target</span>.<span class="ident">push</span>(<span class="ident">is</span>.<span class="ident">read_carllerche_bytes</span>()<span class="question-mark">?</span>);
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1645,7 +1646,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="kw">let</span> <span class="ident">tmp</span> <span class="op">=</span> <span class="ident">target</span>.<span class="ident">set_default</span>();
             <span class="ident">is</span>.<span class="ident">read_bytes_into</span>(<span class="ident">tmp</span>)
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1660,7 +1661,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="kw-2">*</span><span class="ident">target</span> <span class="op">=</span> <span class="prelude-val">Some</span>(<span class="ident">is</span>.<span class="ident">read_carllerche_bytes</span>()<span class="question-mark">?</span>);
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1671,7 +1672,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
 ) <span class="op">-&gt;</span> <span class="ident">ProtobufResult</span><span class="op">&lt;</span>()<span class="op">&gt;</span> {
     <span class="kw">match</span> <span class="ident">wire_type</span> {
         <span class="ident">WireTypeLengthDelimited</span> <span class="op">=&gt;</span> <span class="ident">is</span>.<span class="ident">read_bytes_into</span>(<span class="ident">target</span>),
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1686,7 +1687,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="kw-2">*</span><span class="ident">target</span> <span class="op">=</span> <span class="ident">is</span>.<span class="ident">read_carllerche_bytes</span>()<span class="question-mark">?</span>;
             <span class="prelude-val">Ok</span>(())
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1700,7 +1701,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="kw">let</span> <span class="ident">tmp</span> <span class="op">=</span> <span class="ident">target</span>.<span class="ident">push_default</span>();
             <span class="ident">is</span>.<span class="ident">merge_message</span>(<span class="ident">tmp</span>)
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
@@ -1714,13 +1715,13 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
             <span class="kw">let</span> <span class="ident">tmp</span> <span class="op">=</span> <span class="ident">target</span>.<span class="ident">set_default</span>();
             <span class="ident">is</span>.<span class="ident">merge_message</span>(<span class="ident">tmp</span>)
         }
-        _ <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">Err</span>(<span class="ident">unexpected_wire_type</span>(<span class="ident">wire_type</span>)),
     }
 }
 
 <span class="kw">fn</span> <span class="ident">skip_group</span>(<span class="ident">is</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">CodedInputStream</span>) <span class="op">-&gt;</span> <span class="ident">ProtobufResult</span><span class="op">&lt;</span>()<span class="op">&gt;</span> {
     <span class="kw">loop</span> {
-        <span class="kw">let</span> (_, <span class="ident">wire_type</span>) <span class="op">=</span> <span class="ident">is</span>.<span class="ident">read_tag_unpack</span>()<span class="question-mark">?</span>;
+        <span class="kw">let</span> (<span class="kw">_</span>, <span class="ident">wire_type</span>) <span class="op">=</span> <span class="ident">is</span>.<span class="ident">read_tag_unpack</span>()<span class="question-mark">?</span>;
         <span class="kw">if</span> <span class="ident">wire_type</span> <span class="op">==</span> <span class="ident">wire_format</span>::<span class="ident">WireTypeEndGroup</span> {
             <span class="kw">return</span> <span class="prelude-val">Ok</span>(());
         }
@@ -1738,7 +1739,7 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
 ) <span class="op">-&gt;</span> <span class="ident">ProtobufResult</span><span class="op">&lt;</span>()<span class="op">&gt;</span> {
     <span class="kw">match</span> <span class="ident">wire_type</span> {
         <span class="ident">wire_format</span>::<span class="ident">WireTypeStartGroup</span> <span class="op">=&gt;</span> <span class="ident">skip_group</span>(<span class="ident">is</span>),
-        _ <span class="op">=&gt;</span> {
+        <span class="kw">_</span> <span class="op">=&gt;</span> {
             <span class="kw">let</span> <span class="ident">unknown</span> <span class="op">=</span> <span class="ident">is</span>.<span class="ident">read_unknown</span>(<span class="ident">wire_type</span>)<span class="question-mark">?</span>;
             <span class="ident">unknown_fields</span>.<span class="ident">add_value</span>(<span class="ident">field_number</span>, <span class="ident">unknown</span>);
             <span class="prelude-val">Ok</span>(())
@@ -1839,13 +1840,13 @@ impl&lt;E:ProtobufEnum&gt; ProtobufVarint for E {
                 }
                 <span class="ident">value</span> <span class="op">=</span> <span class="prelude-val">Some</span>(<span class="ident">V</span>::<span class="ident">read</span>(<span class="ident">is</span>)<span class="question-mark">?</span>);
             }
-            _ <span class="op">=&gt;</span> <span class="ident">is</span>.<span class="ident">skip_field</span>(<span class="ident">wire_type</span>)<span class="question-mark">?</span>,
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="ident">is</span>.<span class="ident">skip_field</span>(<span class="ident">wire_type</span>)<span class="question-mark">?</span>,
         }
     }
     <span class="ident">is</span>.<span class="ident">pop_limit</span>(<span class="ident">old_limit</span>);
 
     <span class="kw">match</span> (<span class="ident">key</span>, <span class="ident">value</span>) {
-        (<span class="prelude-val">None</span>, _) <span class="op">|</span> (_, <span class="prelude-val">None</span>) <span class="op">=&gt;</span> <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">ProtobufError</span>::<span class="ident">WireError</span>(<span class="ident">WireError</span>::<span class="ident">IncompleteMap</span>)),
+        (<span class="prelude-val">None</span>, <span class="kw">_</span>) <span class="op">|</span> (<span class="kw">_</span>, <span class="prelude-val">None</span>) <span class="op">=&gt;</span> <span class="kw">return</span> <span class="prelude-val">Err</span>(<span class="ident">ProtobufError</span>::<span class="ident">WireError</span>(<span class="ident">WireError</span>::<span class="ident">IncompleteMap</span>)),
         (<span class="prelude-val">Some</span>(<span class="ident">key</span>), <span class="prelude-val">Some</span>(<span class="ident">value</span>)) <span class="op">=&gt;</span> {
             <span class="ident">target</span>.<span class="ident">insert</span>(<span class="ident">key</span>, <span class="ident">value</span>);
         }

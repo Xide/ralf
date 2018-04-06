@@ -10,10 +10,11 @@
     <title>field.rs.html -- source</title>
 
     <link rel="stylesheet" type="text/css" href="../../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css"
+          id="mainThemeStyle">
     
     <link rel="stylesheet" type="text/css" href="../../../dark.css">
-    <link rel="stylesheet" type="text/css" href="../../../main.css" id="themeStyle">
+    <link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle">
     <script src="../../../storage.js"></script>
     
 
@@ -2186,7 +2187,7 @@
         <span class="ident">FieldDescriptorProto_Type</span>::<span class="ident">TYPE_MESSAGE</span> <span class="op">|</span>
         <span class="ident">FieldDescriptorProto_Type</span>::<span class="ident">TYPE_STRING</span> <span class="op">|</span>
         <span class="ident">FieldDescriptorProto_Type</span>::<span class="ident">TYPE_BYTES</span> <span class="op">=&gt;</span> <span class="bool-val">false</span>,
-        _ <span class="op">=&gt;</span> <span class="bool-val">true</span>,
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="bool-val">true</span>,
     }
 }
 
@@ -2200,7 +2201,7 @@
         <span class="kw">match</span> <span class="kw-2">*</span><span class="self">self</span> {
             <span class="ident">FieldDescriptorProto_Type</span>::<span class="ident">TYPE_SINT32</span> <span class="op">|</span>
             <span class="ident">FieldDescriptorProto_Type</span>::<span class="ident">TYPE_SINT64</span> <span class="op">=&gt;</span> <span class="bool-val">true</span>,
-            _ <span class="op">=&gt;</span> <span class="bool-val">false</span>,
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="bool-val">false</span>,
         }
     }
 }
@@ -2266,7 +2267,7 @@
         <span class="ident">FieldDescriptorProto_Type</span>::<span class="ident">TYPE_BOOL</span> <span class="op">=&gt;</span> <span class="prelude-val">Some</span>(<span class="number">1</span>),
         <span class="ident">t</span> <span class="kw">if</span> <span class="ident">field_type_wire_type</span>(<span class="ident">t</span>) <span class="op">==</span> <span class="ident">wire_format</span>::<span class="ident">WireTypeFixed32</span> <span class="op">=&gt;</span> <span class="prelude-val">Some</span>(<span class="number">4</span>),
         <span class="ident">t</span> <span class="kw">if</span> <span class="ident">field_type_wire_type</span>(<span class="ident">t</span>) <span class="op">==</span> <span class="ident">wire_format</span>::<span class="ident">WireTypeFixed64</span> <span class="op">=&gt;</span> <span class="prelude-val">Some</span>(<span class="number">8</span>),
-        _ <span class="op">=&gt;</span> <span class="prelude-val">None</span>,
+        <span class="kw">_</span> <span class="op">=&gt;</span> <span class="prelude-val">None</span>,
     }
 }
 
@@ -2307,7 +2308,7 @@
                         <span class="kw">if</span> <span class="self">self</span>.<span class="ident">elem</span>.<span class="ident">primitive_type_variant</span>() <span class="op">==</span> <span class="ident">PrimitiveTypeVariant</span>::<span class="ident">Default</span> <span class="op">=&gt;</span> {
                         <span class="ident">RustType</span>::<span class="ident">SingularField</span>(<span class="ident">Box</span>::<span class="ident">new</span>(<span class="self">self</span>.<span class="ident">elem</span>.<span class="ident">rust_storage_type</span>()))
                     }
-                    _ <span class="op">=&gt;</span> <span class="ident">RustType</span>::<span class="prelude-ty">Option</span>(<span class="ident">Box</span>::<span class="ident">new</span>(<span class="self">self</span>.<span class="ident">elem</span>.<span class="ident">rust_storage_type</span>())),
+                    <span class="kw">_</span> <span class="op">=&gt;</span> <span class="ident">RustType</span>::<span class="prelude-ty">Option</span>(<span class="ident">Box</span>::<span class="ident">new</span>(<span class="self">self</span>.<span class="ident">elem</span>.<span class="ident">rust_storage_type</span>())),
                 }
             }
             <span class="ident">SingularFieldFlag</span>::<span class="ident">WithoutFlag</span> <span class="op">=&gt;</span> <span class="self">self</span>.<span class="ident">elem</span>.<span class="ident">rust_storage_type</span>(),
@@ -2456,7 +2457,7 @@
             <span class="ident">FieldElem</span>::<span class="ident">Primitive</span>(.., <span class="ident">PrimitiveTypeVariant</span>::<span class="ident">Carllerche</span>) <span class="op">=&gt;</span> <span class="macro">unreachable</span><span class="macro">!</span>(),
             <span class="ident">FieldElem</span>::<span class="ident">Group</span> <span class="op">=&gt;</span> <span class="ident">RustType</span>::<span class="ident">Group</span>,
             <span class="ident">FieldElem</span>::<span class="ident">Message</span>(<span class="kw-2">ref</span> <span class="ident">name</span>, ..) <span class="op">=&gt;</span> <span class="ident">RustType</span>::<span class="ident">Message</span>(<span class="ident">name</span>.<span class="ident">clone</span>()),
-            <span class="ident">FieldElem</span>::<span class="ident">Enum</span>(<span class="kw-2">ref</span> <span class="ident">name</span>, _, <span class="kw-2">ref</span> <span class="ident">default_value</span>) <span class="op">=&gt;</span> {
+            <span class="ident">FieldElem</span>::<span class="ident">Enum</span>(<span class="kw-2">ref</span> <span class="ident">name</span>, <span class="kw">_</span>, <span class="kw-2">ref</span> <span class="ident">default_value</span>) <span class="op">=&gt;</span> {
                 <span class="ident">RustType</span>::<span class="ident">Enum</span>(<span class="ident">name</span>.<span class="ident">clone</span>(), <span class="ident">default_value</span>.<span class="ident">clone</span>())
             }
         }
@@ -2478,8 +2479,8 @@
 
     <span class="kw">fn</span> <span class="ident">primitive_type_variant</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">PrimitiveTypeVariant</span> {
         <span class="kw">match</span> <span class="self">self</span> {
-            <span class="kw-2">&amp;</span><span class="ident">FieldElem</span>::<span class="ident">Primitive</span>(_, <span class="ident">v</span>) <span class="op">=&gt;</span> <span class="ident">v</span>,
-            _ <span class="op">=&gt;</span> <span class="ident">PrimitiveTypeVariant</span>::<span class="ident">Default</span>,
+            <span class="kw-2">&amp;</span><span class="ident">FieldElem</span>::<span class="ident">Primitive</span>(<span class="kw">_</span>, <span class="ident">v</span>) <span class="op">=&gt;</span> <span class="ident">v</span>,
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="ident">PrimitiveTypeVariant</span>::<span class="ident">Default</span>,
         }
     }
 }
@@ -2564,7 +2565,7 @@
                     <span class="prelude-val">Some</span>(<span class="ident">ev</span>),
                 )
             }
-            _ <span class="op">=&gt;</span> <span class="macro">panic</span><span class="macro">!</span>(<span class="string">&quot;unknown named type: {:?}&quot;</span>, <span class="ident">field</span>.<span class="ident">field</span>.<span class="ident">get_field_type</span>()),
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="macro">panic</span><span class="macro">!</span>(<span class="string">&quot;unknown named type: {:?}&quot;</span>, <span class="ident">field</span>.<span class="ident">field</span>.<span class="ident">get_field_type</span>()),
         }
     } <span class="kw">else</span> <span class="kw">if</span> <span class="ident">field</span>.<span class="ident">field</span>.<span class="ident">has_field_type</span>() {
         <span class="kw">let</span> <span class="ident">carllerche_for_bytes</span> <span class="op">=</span> <span class="ident">join_field_ext</span>(
@@ -2663,13 +2664,13 @@
         <span class="kw">let</span> <span class="ident">kind</span> <span class="op">=</span> <span class="kw">if</span> <span class="ident">field</span>.<span class="ident">field</span>.<span class="ident">get_label</span>() <span class="op">==</span> <span class="ident">FieldDescriptorProto_Label</span>::<span class="ident">LABEL_REPEATED</span> {
             <span class="kw">match</span> (<span class="ident">elem</span>, <span class="bool-val">true</span>) {
                 <span class="comment">// map field</span>
-                (<span class="ident">FieldElem</span>::<span class="ident">Message</span>(<span class="ident">name</span>, _, <span class="prelude-val">Some</span>(<span class="ident">key_value</span>)), <span class="bool-val">true</span>) <span class="op">=&gt;</span> <span class="ident">FieldKind</span>::<span class="ident">Map</span>(<span class="ident">MapField</span> {
+                (<span class="ident">FieldElem</span>::<span class="ident">Message</span>(<span class="ident">name</span>, <span class="kw">_</span>, <span class="prelude-val">Some</span>(<span class="ident">key_value</span>)), <span class="bool-val">true</span>) <span class="op">=&gt;</span> <span class="ident">FieldKind</span>::<span class="ident">Map</span>(<span class="ident">MapField</span> {
                     <span class="ident">name</span>: <span class="ident">name</span>,
                     <span class="ident">key</span>: <span class="ident">key_value</span>.<span class="number">0</span>.<span class="ident">clone</span>(),
                     <span class="ident">value</span>: <span class="ident">key_value</span>.<span class="number">1</span>.<span class="ident">clone</span>(),
                 }),
                 <span class="comment">// regular repeated field</span>
-                (<span class="ident">elem</span>, _) <span class="op">=&gt;</span> <span class="ident">FieldKind</span>::<span class="ident">Repeated</span>(<span class="ident">RepeatedField</span> {
+                (<span class="ident">elem</span>, <span class="kw">_</span>) <span class="op">=&gt;</span> <span class="ident">FieldKind</span>::<span class="ident">Repeated</span>(<span class="ident">RepeatedField</span> {
                     <span class="ident">elem</span>,
                     <span class="ident">packed</span>: <span class="ident">field</span>.<span class="ident">field</span>.<span class="ident">get_options</span>().<span class="ident">get_packed</span>(),
                 }),
@@ -2713,28 +2714,28 @@
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">is_oneof</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">bool</span> {
         <span class="kw">match</span> <span class="self">self</span>.<span class="ident">kind</span> {
             <span class="ident">FieldKind</span>::<span class="ident">Oneof</span>(..) <span class="op">=&gt;</span> <span class="bool-val">true</span>,
-            _ <span class="op">=&gt;</span> <span class="bool-val">false</span>,
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="bool-val">false</span>,
         }
     }
 
     <span class="kw">fn</span> <span class="ident">oneof</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="ident">OneofField</span> {
         <span class="kw">match</span> <span class="self">self</span>.<span class="ident">kind</span> {
             <span class="ident">FieldKind</span>::<span class="ident">Oneof</span>(<span class="kw-2">ref</span> <span class="ident">oneof</span>) <span class="op">=&gt;</span> <span class="kw-2">&amp;</span><span class="ident">oneof</span>,
-            _ <span class="op">=&gt;</span> <span class="macro">panic</span><span class="macro">!</span>(<span class="string">&quot;not a oneof field: {}&quot;</span>, <span class="self">self</span>.<span class="ident">reconstruct_def</span>()),
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="macro">panic</span><span class="macro">!</span>(<span class="string">&quot;not a oneof field: {}&quot;</span>, <span class="self">self</span>.<span class="ident">reconstruct_def</span>()),
         }
     }
 
     <span class="kw">fn</span> <span class="ident">is_singular</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">bool</span> {
         <span class="kw">match</span> <span class="self">self</span>.<span class="ident">kind</span> {
             <span class="ident">FieldKind</span>::<span class="ident">Singular</span>(..) <span class="op">=&gt;</span> <span class="bool-val">true</span>,
-            _ <span class="op">=&gt;</span> <span class="bool-val">false</span>,
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="bool-val">false</span>,
         }
     }
 
     <span class="kw">fn</span> <span class="ident">is_repeated_not_map</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">bool</span> {
         <span class="kw">match</span> <span class="self">self</span>.<span class="ident">kind</span> {
             <span class="ident">FieldKind</span>::<span class="ident">Repeated</span>(..) <span class="op">=&gt;</span> <span class="bool-val">true</span>,
-            _ <span class="op">=&gt;</span> <span class="bool-val">false</span>,
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="bool-val">false</span>,
         }
     }
 
@@ -2742,14 +2743,14 @@
         <span class="kw">match</span> <span class="self">self</span>.<span class="ident">kind</span> {
             <span class="ident">FieldKind</span>::<span class="ident">Repeated</span>(..) <span class="op">|</span>
             <span class="ident">FieldKind</span>::<span class="ident">Map</span>(..) <span class="op">=&gt;</span> <span class="bool-val">true</span>,
-            _ <span class="op">=&gt;</span> <span class="bool-val">false</span>,
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="bool-val">false</span>,
         }
     }
 
     <span class="kw">fn</span> <span class="ident">is_repeated_packed</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">bool</span> {
         <span class="kw">match</span> <span class="self">self</span>.<span class="ident">kind</span> {
             <span class="ident">FieldKind</span>::<span class="ident">Repeated</span>(<span class="ident">RepeatedField</span> { <span class="ident">packed</span>: <span class="bool-val">true</span>, .. }) <span class="op">=&gt;</span> <span class="bool-val">true</span>,
-            _ <span class="op">=&gt;</span> <span class="bool-val">false</span>,
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="bool-val">false</span>,
         }
     }
 
@@ -2757,21 +2758,21 @@
     <span class="kw">fn</span> <span class="ident">repeated</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="ident">RepeatedField</span> {
         <span class="kw">match</span> <span class="self">self</span>.<span class="ident">kind</span> {
             <span class="ident">FieldKind</span>::<span class="ident">Repeated</span>(<span class="kw-2">ref</span> <span class="ident">repeated</span>) <span class="op">=&gt;</span> <span class="kw-2">&amp;</span><span class="ident">repeated</span>,
-            _ <span class="op">=&gt;</span> <span class="macro">panic</span><span class="macro">!</span>(<span class="string">&quot;not a repeated field: {}&quot;</span>, <span class="self">self</span>.<span class="ident">reconstruct_def</span>()),
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="macro">panic</span><span class="macro">!</span>(<span class="string">&quot;not a repeated field: {}&quot;</span>, <span class="self">self</span>.<span class="ident">reconstruct_def</span>()),
         }
     }
 
     <span class="kw">fn</span> <span class="ident">singular</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="ident">SingularField</span> {
         <span class="kw">match</span> <span class="self">self</span>.<span class="ident">kind</span> {
             <span class="ident">FieldKind</span>::<span class="ident">Singular</span>(<span class="kw-2">ref</span> <span class="ident">singular</span>) <span class="op">=&gt;</span> <span class="kw-2">&amp;</span><span class="ident">singular</span>,
-            _ <span class="op">=&gt;</span> <span class="macro">panic</span><span class="macro">!</span>(<span class="string">&quot;not a singular field: {}&quot;</span>, <span class="self">self</span>.<span class="ident">reconstruct_def</span>()),
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="macro">panic</span><span class="macro">!</span>(<span class="string">&quot;not a singular field: {}&quot;</span>, <span class="self">self</span>.<span class="ident">reconstruct_def</span>()),
         }
     }
 
     <span class="kw">fn</span> <span class="ident">map</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="ident">MapField</span> {
         <span class="kw">match</span> <span class="self">self</span>.<span class="ident">kind</span> {
             <span class="ident">FieldKind</span>::<span class="ident">Map</span>(<span class="kw-2">ref</span> <span class="ident">map</span>) <span class="op">=&gt;</span> <span class="kw-2">&amp;</span><span class="ident">map</span>,
-            _ <span class="op">=&gt;</span> <span class="macro">panic</span><span class="macro">!</span>(<span class="string">&quot;not a map field: {}&quot;</span>, <span class="self">self</span>.<span class="ident">reconstruct_def</span>()),
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="macro">panic</span><span class="macro">!</span>(<span class="string">&quot;not a map field: {}&quot;</span>, <span class="self">self</span>.<span class="ident">reconstruct_def</span>()),
         }
     }
 
@@ -2880,7 +2881,7 @@
         <span class="kw">match</span> <span class="self">self</span>.<span class="ident">proto_type</span> {
             <span class="ident">FieldDescriptorProto_Type</span>::<span class="ident">TYPE_SINT32</span> <span class="op">|</span>
             <span class="ident">FieldDescriptorProto_Type</span>::<span class="ident">TYPE_SINT64</span> <span class="op">=&gt;</span> <span class="bool-val">true</span>,
-            _ <span class="op">=&gt;</span> <span class="bool-val">false</span>,
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="bool-val">false</span>,
         }
     }
 
@@ -2888,7 +2889,7 @@
     <span class="kw">fn</span> <span class="ident">is_enum</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">bool</span> {
         <span class="kw">match</span> <span class="self">self</span>.<span class="ident">proto_type</span> {
             <span class="ident">FieldDescriptorProto_Type</span>::<span class="ident">TYPE_ENUM</span> <span class="op">=&gt;</span> <span class="bool-val">true</span>,
-            _ <span class="op">=&gt;</span> <span class="bool-val">false</span>,
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="bool-val">false</span>,
         }
     }
 
@@ -2901,7 +2902,7 @@
         <span class="kw">let</span> <span class="ident">type_name</span> <span class="op">=</span> <span class="kw">match</span> <span class="self">self</span>.<span class="ident">proto_type</span> {
             <span class="ident">FieldDescriptorProto_Type</span>::<span class="ident">TYPE_FLOAT</span> <span class="op">=&gt;</span> <span class="string">&quot;f32&quot;</span>,
             <span class="ident">FieldDescriptorProto_Type</span>::<span class="ident">TYPE_DOUBLE</span> <span class="op">=&gt;</span> <span class="string">&quot;f64&quot;</span>,
-            _ <span class="op">=&gt;</span> <span class="macro">unreachable</span><span class="macro">!</span>(),
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="macro">unreachable</span><span class="macro">!</span>(),
         };
         <span class="kw">let</span> <span class="ident">proto_default</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">proto_field</span>.<span class="ident">field</span>.<span class="ident">get_default_value</span>();
 
@@ -2975,7 +2976,7 @@
                 <span class="ident">FieldDescriptorProto_Type</span>::<span class="ident">TYPE_BYTES</span> <span class="op">=&gt;</span> {
                     <span class="ident">RustType</span>::<span class="ident">Ref</span>(<span class="ident">Box</span>::<span class="ident">new</span>(<span class="ident">RustType</span>::<span class="ident">Slice</span>(<span class="ident">Box</span>::<span class="ident">new</span>(<span class="ident">RustType</span>::<span class="ident">u8</span>()))))
                 }
-                _ <span class="op">=&gt;</span> <span class="self">self</span>.<span class="ident">full_storage_iter_elem_type</span>(),
+                <span class="kw">_</span> <span class="op">=&gt;</span> <span class="self">self</span>.<span class="ident">full_storage_iter_elem_type</span>(),
             };
 
             <span class="ident">RustValueTyped</span> {
@@ -3005,10 +3006,10 @@
 
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">reconstruct_def</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">String</span> {
         <span class="kw">let</span> <span class="ident">prefix</span> <span class="op">=</span> <span class="kw">match</span> (<span class="self">self</span>.<span class="ident">proto_field</span>.<span class="ident">field</span>.<span class="ident">get_label</span>(), <span class="self">self</span>.<span class="ident">syntax</span>) {
-            (<span class="ident">FieldDescriptorProto_Label</span>::<span class="ident">LABEL_REPEATED</span>, _) <span class="op">=&gt;</span> <span class="string">&quot;repeated &quot;</span>,
-            (_, <span class="ident">Syntax</span>::<span class="ident">PROTO3</span>) <span class="op">=&gt;</span> <span class="string">&quot;&quot;</span>,
-            (<span class="ident">FieldDescriptorProto_Label</span>::<span class="ident">LABEL_OPTIONAL</span>, _) <span class="op">=&gt;</span> <span class="string">&quot;optional &quot;</span>,
-            (<span class="ident">FieldDescriptorProto_Label</span>::<span class="ident">LABEL_REQUIRED</span>, _) <span class="op">=&gt;</span> <span class="string">&quot;required &quot;</span>,
+            (<span class="ident">FieldDescriptorProto_Label</span>::<span class="ident">LABEL_REPEATED</span>, <span class="kw">_</span>) <span class="op">=&gt;</span> <span class="string">&quot;repeated &quot;</span>,
+            (<span class="kw">_</span>, <span class="ident">Syntax</span>::<span class="ident">PROTO3</span>) <span class="op">=&gt;</span> <span class="string">&quot;&quot;</span>,
+            (<span class="ident">FieldDescriptorProto_Label</span>::<span class="ident">LABEL_OPTIONAL</span>, <span class="kw">_</span>) <span class="op">=&gt;</span> <span class="string">&quot;optional &quot;</span>,
+            (<span class="ident">FieldDescriptorProto_Label</span>::<span class="ident">LABEL_REQUIRED</span>, <span class="kw">_</span>) <span class="op">=&gt;</span> <span class="string">&quot;required &quot;</span>,
         };
         <span class="macro">format</span><span class="macro">!</span>(
             <span class="string">&quot;{}{} {} = {}&quot;</span>,
@@ -3025,7 +3026,7 @@
                 <span class="kw">let</span> <span class="ident">coll</span> <span class="op">=</span> <span class="kw">match</span> <span class="self">self</span>.<span class="ident">full_storage_type</span>() {
                     <span class="ident">RustType</span>::<span class="ident">Vec</span>(..) <span class="op">=&gt;</span> <span class="string">&quot;vec&quot;</span>,
                     <span class="ident">RustType</span>::<span class="ident">RepeatedField</span>(..) <span class="op">=&gt;</span> <span class="string">&quot;repeated_field&quot;</span>,
-                    _ <span class="op">=&gt;</span> <span class="macro">unreachable</span><span class="macro">!</span>(),
+                    <span class="kw">_</span> <span class="op">=&gt;</span> <span class="macro">unreachable</span><span class="macro">!</span>(),
                 };
                 <span class="kw">let</span> <span class="ident">name</span> <span class="op">=</span> <span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;make_{}_accessor&quot;</span>, <span class="ident">coll</span>);
                 <span class="ident">AccessorFn</span> {
@@ -3085,7 +3086,7 @@
                     <span class="ident">RustType</span>::<span class="prelude-ty">Option</span>(..) <span class="op">=&gt;</span> <span class="string">&quot;option&quot;</span>,
                     <span class="ident">RustType</span>::<span class="ident">SingularField</span>(..) <span class="op">=&gt;</span> <span class="string">&quot;singular_field&quot;</span>,
                     <span class="ident">RustType</span>::<span class="ident">SingularPtrField</span>(..) <span class="op">=&gt;</span> <span class="string">&quot;singular_ptr_field&quot;</span>,
-                    _ <span class="op">=&gt;</span> <span class="macro">unreachable</span><span class="macro">!</span>(),
+                    <span class="kw">_</span> <span class="op">=&gt;</span> <span class="macro">unreachable</span><span class="macro">!</span>(),
                 };
                 <span class="kw">let</span> <span class="ident">name</span> <span class="op">=</span> <span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;make_{}_accessor&quot;</span>, <span class="ident">coll</span>);
                 <span class="ident">AccessorFn</span> {
@@ -3118,7 +3119,7 @@
                     <span class="kw-2">&amp;</span><span class="ident">FieldElem</span>::<span class="ident">Enum</span>(<span class="kw-2">ref</span> <span class="ident">name</span>, ..) <span class="op">=&gt;</span> {
                         <span class="ident">type_params</span>.<span class="ident">push</span>(<span class="ident">name</span>.<span class="ident">to_owned</span>());
                     }
-                    _ <span class="op">=&gt;</span> (),
+                    <span class="kw">_</span> <span class="op">=&gt;</span> (),
                 }
 
                 <span class="ident">AccessorFn</span> {
@@ -3180,7 +3181,7 @@
                             <span class="ident">var_type</span>.<span class="ident">into_target</span>(<span class="kw-2">&amp;</span><span class="ident">param_type</span>, <span class="ident">var</span>)
                         )
                     }
-                    _ <span class="op">=&gt;</span> {
+                    <span class="kw">_</span> <span class="op">=&gt;</span> {
                         <span class="kw">let</span> <span class="ident">param_type</span> <span class="op">=</span> <span class="kw">match</span> <span class="ident">var_type</span> {
                             <span class="kw-2">&amp;</span><span class="ident">RustType</span>::<span class="ident">Ref</span>(<span class="kw-2">ref</span> <span class="ident">t</span>) <span class="op">=&gt;</span> (<span class="kw-2">*</span><span class="kw-2">*</span><span class="ident">t</span>).<span class="ident">clone</span>(),
                             <span class="ident">t</span> <span class="op">=&gt;</span> <span class="ident">t</span>.<span class="ident">clone</span>(),
@@ -3226,7 +3227,7 @@
                 ));
                 <span class="ident">w</span>.<span class="ident">write_line</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;{}.write_to_with_cached_sizes({})?;&quot;</span>, <span class="ident">var</span>, <span class="ident">os</span>));
             }
-            _ <span class="op">=&gt;</span> {
+            <span class="kw">_</span> <span class="op">=&gt;</span> {
                 <span class="kw">let</span> <span class="ident">param_type</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">os_write_fn_param_type</span>();
                 <span class="kw">let</span> <span class="ident">os_write_fn_suffix</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">os_write_fn_suffix</span>();
                 <span class="kw">let</span> <span class="ident">number</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">proto_field</span>.<span class="ident">number</span>();
@@ -3278,7 +3279,7 @@
 
         <span class="kw">let</span> <span class="ident">suffix</span> <span class="op">=</span> <span class="kw">match</span> <span class="self">self</span>.<span class="ident">full_storage_type</span>() {
             <span class="ident">RustType</span>::<span class="prelude-ty">Option</span>(<span class="kw-2">ref</span> <span class="ident">e</span>) <span class="kw">if</span> <span class="ident">e</span>.<span class="ident">is_copy</span>() <span class="op">=&gt;</span> <span class="string">&quot;&quot;</span>,
-            _ <span class="op">=&gt;</span> <span class="string">&quot;.as_ref()&quot;</span>,
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="string">&quot;.as_ref()&quot;</span>,
         };
 
         <span class="self">self</span>.<span class="ident">as_option_type</span>()
@@ -3322,7 +3323,7 @@
                             <span class="ident">cb</span>(<span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">self_field</span>(), <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">full_storage_type</span>(), <span class="ident">w</span>);
                         });
                     }
-                    _ <span class="op">=&gt;</span> {
+                    <span class="kw">_</span> <span class="op">=&gt;</span> {
                         <span class="ident">w</span>.<span class="ident">if_stmt</span>(
                             <span class="macro">format</span><span class="macro">!</span>(
                                 <span class="string">&quot;{} != {}&quot;</span>,
@@ -3378,7 +3379,7 @@
                     <span class="op">|</span><span class="ident">w</span><span class="op">|</span> <span class="ident">cb</span>(<span class="ident">w</span>, <span class="kw-2">&amp;</span><span class="ident">elem</span>.<span class="ident">rust_storage_type</span>()),
                 )
             }
-            _ <span class="op">=&gt;</span> {
+            <span class="kw">_</span> <span class="op">=&gt;</span> {
                 <span class="kw">let</span> <span class="ident">v_type</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">full_storage_iter_elem_type</span>();
                 <span class="kw">let</span> <span class="ident">self_field</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">self_field</span>();
                 <span class="ident">w</span>.<span class="ident">for_stmt</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;&amp;{}&quot;</span>, <span class="ident">self_field</span>), <span class="ident">varn</span>, <span class="op">|</span><span class="ident">w</span><span class="op">|</span> <span class="ident">cb</span>(<span class="ident">w</span>, <span class="kw-2">&amp;</span><span class="ident">v_type</span>));
@@ -3443,7 +3444,7 @@
                     <span class="kw">let</span> <span class="ident">self_field</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">self_field</span>();
                     <span class="ident">w</span>.<span class="ident">write_line</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;{}.set_default();&quot;</span>, <span class="ident">self_field</span>));
                 }
-                _ <span class="op">=&gt;</span> {
+                <span class="kw">_</span> <span class="op">=&gt;</span> {
                     <span class="self">self</span>.<span class="ident">write_self_field_assign_some</span>(<span class="ident">w</span>, <span class="kw-2">&amp;</span><span class="self">self</span>.<span class="ident">element_default_value_rust</span>().<span class="ident">value</span>);
                 }
             }
@@ -3590,7 +3591,7 @@
     <span class="kw">fn</span> <span class="ident">write_merge_from_singular</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">wire_type_var</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">w</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">CodeWriter</span>) {
         <span class="kw">let</span> <span class="ident">field</span> <span class="op">=</span> <span class="kw">match</span> <span class="self">self</span>.<span class="ident">kind</span> {
             <span class="ident">FieldKind</span>::<span class="ident">Singular</span>(<span class="kw-2">ref</span> <span class="ident">field</span>) <span class="op">=&gt;</span> <span class="ident">field</span>,
-            _ <span class="op">=&gt;</span> <span class="macro">panic</span><span class="macro">!</span>(),
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="macro">panic</span><span class="macro">!</span>(),
         };
 
         <span class="kw">match</span> <span class="ident">field</span>.<span class="ident">elem</span> {
@@ -3612,7 +3613,7 @@
                     <span class="self">self</span>.<span class="ident">proto_field</span>.<span class="ident">number</span>()
                 ));
             }
-            _ <span class="op">=&gt;</span> {
+            <span class="kw">_</span> <span class="op">=&gt;</span> {
                 <span class="kw">let</span> <span class="ident">read_proc</span> <span class="op">=</span> <span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;{}?&quot;</span>, <span class="self">self</span>.<span class="ident">proto_type</span>.<span class="ident">read</span>(<span class="string">&quot;is&quot;</span>));
 
                 <span class="self">self</span>.<span class="ident">write_assert_wire_type</span>(<span class="ident">wire_type_var</span>, <span class="ident">w</span>);
@@ -3626,7 +3627,7 @@
     <span class="kw">fn</span> <span class="ident">write_merge_from_repeated</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">wire_type_var</span>: <span class="kw-2">&amp;</span><span class="ident">str</span>, <span class="ident">w</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">CodeWriter</span>) {
         <span class="kw">let</span> <span class="ident">field</span> <span class="op">=</span> <span class="kw">match</span> <span class="self">self</span>.<span class="ident">kind</span> {
             <span class="ident">FieldKind</span>::<span class="ident">Repeated</span>(<span class="kw-2">ref</span> <span class="ident">field</span>) <span class="op">=&gt;</span> <span class="ident">field</span>,
-            _ <span class="op">=&gt;</span> <span class="macro">panic</span><span class="macro">!</span>(),
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="macro">panic</span><span class="macro">!</span>(),
         };
 
         <span class="kw">match</span> <span class="ident">field</span>.<span class="ident">elem</span> {
@@ -3643,7 +3644,7 @@
                     <span class="self">self</span>.<span class="ident">proto_field</span>.<span class="ident">number</span>()
                 ));
             }
-            _ <span class="op">=&gt;</span> {
+            <span class="kw">_</span> <span class="op">=&gt;</span> {
                 <span class="ident">w</span>.<span class="ident">write_line</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(
                     <span class="string">&quot;::protobuf::rt::read_repeated_{}_into({}, is, &amp;mut self.{})?;&quot;</span>,
                     <span class="ident">protobuf_name</span>(<span class="self">self</span>.<span class="ident">proto_type</span>),
@@ -3673,7 +3674,7 @@
                     <span class="self">self</span>.<span class="ident">self_field_vec_packed_varint_size</span>()
                 }
             }
-            _ <span class="op">=&gt;</span> {
+            <span class="kw">_</span> <span class="op">=&gt;</span> {
                 <span class="macro">panic</span><span class="macro">!</span>(<span class="string">&quot;not packed&quot;</span>);
             }
         }
@@ -3698,7 +3699,7 @@
                     <span class="ident">tag_size</span>
                 ));
             }
-            _ <span class="op">=&gt;</span> {
+            <span class="kw">_</span> <span class="op">=&gt;</span> {
                 <span class="ident">w</span>.<span class="ident">write_line</span>(<span class="kw-2">&amp;</span><span class="macro">format</span><span class="macro">!</span>(
                     <span class="string">&quot;{} += {};&quot;</span>,
                     <span class="ident">sum_var</span>,
@@ -3993,7 +3994,7 @@
             <span class="ident">RustType</span>::<span class="ident">Ref</span>(<span class="kw-2">ref</span> <span class="ident">param</span>) <span class="op">=&gt;</span> {
                 <span class="macro">format</span><span class="macro">!</span>(<span class="string">&quot;mut_{}(&amp;mut self) -&gt; &amp;mut {}&quot;</span>, <span class="self">self</span>.<span class="ident">rust_name</span>, <span class="kw-2">*</span><span class="kw-2">*</span><span class="ident">param</span>)
             }
-            _ <span class="op">=&gt;</span> <span class="macro">panic</span><span class="macro">!</span>(<span class="string">&quot;not a ref: {}&quot;</span>, <span class="ident">mut_xxx_return_type</span>),
+            <span class="kw">_</span> <span class="op">=&gt;</span> <span class="macro">panic</span><span class="macro">!</span>(<span class="string">&quot;not a ref: {}&quot;</span>, <span class="ident">mut_xxx_return_type</span>),
         };
         <span class="ident">w</span>.<span class="ident">pub_fn</span>(<span class="kw-2">&amp;</span><span class="ident">fn_def</span>, <span class="op">|</span><span class="ident">w</span><span class="op">|</span> {
             <span class="kw">match</span> <span class="self">self</span>.<span class="ident">kind</span> {

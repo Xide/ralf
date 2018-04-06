@@ -10,10 +10,11 @@
     <title>unknown.rs.html -- source</title>
 
     <link rel="stylesheet" type="text/css" href="../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css"
+          id="mainThemeStyle">
     
     <link rel="stylesheet" type="text/css" href="../../dark.css">
-    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
+    <link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle">
     <script src="../../storage.js"></script>
     
 
@@ -305,10 +306,10 @@
 <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;o</span><span class="op">&gt;</span> <span class="ident">UnknownValueRef</span><span class="op">&lt;</span><span class="lifetime">&#39;o</span><span class="op">&gt;</span> {
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">wire_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">wire_format</span>::<span class="ident">WireType</span> {
         <span class="kw">match</span> <span class="kw-2">*</span><span class="self">self</span> {
-            <span class="ident">UnknownValueRef</span>::<span class="ident">Fixed32</span>(_) <span class="op">=&gt;</span> <span class="ident">wire_format</span>::<span class="ident">WireTypeFixed32</span>,
-            <span class="ident">UnknownValueRef</span>::<span class="ident">Fixed64</span>(_) <span class="op">=&gt;</span> <span class="ident">wire_format</span>::<span class="ident">WireTypeFixed64</span>,
-            <span class="ident">UnknownValueRef</span>::<span class="ident">Varint</span>(_) <span class="op">=&gt;</span> <span class="ident">wire_format</span>::<span class="ident">WireTypeVarint</span>,
-            <span class="ident">UnknownValueRef</span>::<span class="ident">LengthDelimited</span>(_) <span class="op">=&gt;</span> <span class="ident">wire_format</span>::<span class="ident">WireTypeLengthDelimited</span>,
+            <span class="ident">UnknownValueRef</span>::<span class="ident">Fixed32</span>(<span class="kw">_</span>) <span class="op">=&gt;</span> <span class="ident">wire_format</span>::<span class="ident">WireTypeFixed32</span>,
+            <span class="ident">UnknownValueRef</span>::<span class="ident">Fixed64</span>(<span class="kw">_</span>) <span class="op">=&gt;</span> <span class="ident">wire_format</span>::<span class="ident">WireTypeFixed64</span>,
+            <span class="ident">UnknownValueRef</span>::<span class="ident">Varint</span>(<span class="kw">_</span>) <span class="op">=&gt;</span> <span class="ident">wire_format</span>::<span class="ident">WireTypeVarint</span>,
+            <span class="ident">UnknownValueRef</span>::<span class="ident">LengthDelimited</span>(<span class="kw">_</span>) <span class="op">=&gt;</span> <span class="ident">wire_format</span>::<span class="ident">WireTypeLengthDelimited</span>,
         }
     }
 }
