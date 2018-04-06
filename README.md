@@ -4,6 +4,7 @@ Distributed state machine library, written in Rust on top of [raft-rs](https://g
 
 [![Build Status](https://travis-ci.org/Xide/ralf.svg?branch=master)](https://travis-ci.org/Xide/ralf)
 [![Coverage Status](https://coveralls.io/repos/github/Xide/ralf/badge.svg?branch=master)](https://coveralls.io/github/Xide/ralf?branch=master)
+[![Crate homepage](https://img.shields.io/crates/v/raft.svg)](https://crates.io/crates/ralf)
 
 [Crate documentation](https://xide.github.io/ralf)
 
