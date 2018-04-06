@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["SnapshotStatus",""]],"fn":[["is_empty_snap",""]],"struct":[["Peer",""],["RawNode",""],["Ready",""]]});

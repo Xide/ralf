@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["ConfChangeType",""],["EntryType",""],["MessageType",""]],"fn":[["file_descriptor_proto",""]],"struct":[["ConfChange",""],["ConfState",""],["Entry",""],["HardState",""],["Message",""],["Snapshot",""],["SnapshotMetadata",""]]});

@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["MemStorage","`MemStorage` is a thread-safe implementation of Storage trait. It is mainly used for test purpose."],["MemStorageCore",""],["RaftState",""]],"trait":[["Storage","Storage is an trait that may be implemented by the application to retrieve log entries from storage."]]});
