@@ -13,3 +13,6 @@ description = "Distributed state machine built on top of raft-rs"
 [dependencies]
 raft = "0.1.0"
 log = "0.4"
+
+[badges]
+travis-ci = { repository = "Xide/ralf", branch = "master" }
