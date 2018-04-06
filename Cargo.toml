@@ -6,7 +6,7 @@ repository = "https://github.com/Xide/ralf.git"
 homepage = "https://github.com/Xide/ralf.git"
 license = "MIT"
 readme = "README.md"
-documentation = ""
+documentation = "https://xide.github.io/ralf"
 description = "Distributed state machine built on top of raft-rs"
 
 
