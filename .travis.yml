@@ -34,6 +34,7 @@ script:
   - |
       cargo build &&
       cargo test &&
+      rm -rf target/doc &&
       cargo doc --no-deps
 
 after_success:
