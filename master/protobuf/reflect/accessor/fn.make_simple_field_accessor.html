@@ -10,11 +10,10 @@
     <title>protobuf::reflect::accessor::make_simple_field_accessor - Rust</title>
 
     <link rel="stylesheet" type="text/css" href="../../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css"
-          id="mainThemeStyle">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css" id="mainThemeStyle">
     
     <link rel="stylesheet" type="text/css" href="../../../dark.css">
-    <link rel="stylesheet" type="text/css" href="../../../light.css" id="themeStyle">
+    <link rel="stylesheet" type="text/css" href="../../../main.css" id="themeStyle">
     <script src="../../../storage.js"></script>
     
 
@@ -34,7 +33,7 @@
     <nav class="sidebar">
         <div class="sidebar-menu">&#9776;</div>
         
-        <div class="sidebar-elems"><p class='location'><a href='../../index.html'>protobuf</a>::<wbr><a href='../index.html'>reflect</a>::<wbr><a href='index.html'>accessor</a></p><script>window.sidebarCurrent = {name: 'make_simple_field_accessor', ty: 'fn', relpath: ''};</script><script defer src="sidebar-items.js"></script></div>
+        <p class='location'><a href='../../index.html'>protobuf</a>::<wbr><a href='../index.html'>reflect</a>::<wbr><a href='index.html'>accessor</a></p><script>window.sidebarCurrent = {name: 'make_simple_field_accessor', ty: 'fn', relpath: ''};</script><script defer src="sidebar-items.js"></script>
     </nav>
 
     <div class="theme-picker">
@@ -55,11 +54,13 @@
         </form>
     </nav>
 
-    <section id='main' class="content"><h1 class='fqn'><span class='in-band'>Function <a href='../../index.html'>protobuf</a>::<wbr><a href='../index.html'>reflect</a>::<wbr><a href='index.html'>accessor</a>::<wbr><a class="fn" href=''>make_simple_field_accessor</a></span><span class='out-of-band'><span id='render-detail'>
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Function <a href='../../index.html'>protobuf</a>::<wbr><a href='../index.html'>reflect</a>::<wbr><a href='index.html'>accessor</a>::<wbr><a class="fn" href=''>make_simple_field_accessor</a></span><span class='out-of-band'><span id='render-detail'>
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../../../src/protobuf/reflect/accessor.rs.html#1083-1099' title='goto source code'>[src]</a></span></h1><pre class='rust fn'>pub fn make_simple_field_accessor&lt;M, V&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;name: &amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;get_field: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.fn.html">fn</a>'a(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a </a>M) -&gt; &amp;'a V::<a class="type" href="../../../protobuf/types/trait.ProtobufType.html#associatedtype.Value" title="type protobuf::types::ProtobufType::Value">Value</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;mut_field: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.fn.html">fn</a>'a(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a mut </a>M) -&gt; &amp;'a mut V::<a class="type" href="../../../protobuf/types/trait.ProtobufType.html#associatedtype.Value" title="type protobuf::types::ProtobufType::Value">Value</a><br>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="trait" href="../../../protobuf/reflect/accessor/trait.FieldAccessor.html" title="trait protobuf::reflect::accessor::FieldAccessor">FieldAccessor</a> + 'static&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;M: <a class="trait" href="../../../protobuf/core/trait.Message.html" title="trait protobuf::core::Message">Message</a> + 'static,<br>&nbsp;&nbsp;&nbsp;&nbsp;V: <a class="trait" href="../../../protobuf/types/trait.ProtobufType.html" title="trait protobuf::types::ProtobufType">ProtobufType</a> + 'static,&nbsp;</span></pre></section>
+               </span><a class='srclink' href='../../../src/protobuf/reflect/accessor.rs.html#1083-1099' title='goto source code'>[src]</a></span></h1>
+<pre class='rust fn'>pub fn make_simple_field_accessor&lt;M, V&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;name: &amp;'static <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;get_field: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.fn.html">fn</a>'a(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a </a>M) -&gt; &amp;'a V::<a class="type" href="../../../protobuf/types/trait.ProtobufType.html#associatedtype.Value" title="type protobuf::types::ProtobufType::Value">Value</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;mut_field: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.fn.html">fn</a>'a(_: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;'a mut </a>M) -&gt; &amp;'a mut V::<a class="type" href="../../../protobuf/types/trait.ProtobufType.html#associatedtype.Value" title="type protobuf::types::ProtobufType::Value">Value</a><br>) -&gt; <a class="struct" href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html" title="struct alloc::boxed::Box">Box</a>&lt;<a class="trait" href="../../../protobuf/reflect/accessor/trait.FieldAccessor.html" title="trait protobuf::reflect::accessor::FieldAccessor">FieldAccessor</a> + 'static&gt; <span class="where fmt-newline">where<br>&nbsp;&nbsp;&nbsp;&nbsp;M: <a class="trait" href="../../../protobuf/core/trait.Message.html" title="trait protobuf::core::Message">Message</a> + 'static,<br>&nbsp;&nbsp;&nbsp;&nbsp;V: <a class="trait" href="../../../protobuf/types/trait.ProtobufType.html" title="trait protobuf::types::ProtobufType">ProtobufType</a> + 'static,&nbsp;</span></pre></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

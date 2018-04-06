@@ -10,11 +10,10 @@
     <title>eraftpb.rs.html -- source</title>
 
     <link rel="stylesheet" type="text/css" href="../../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../../rustdoc.css"
-          id="mainThemeStyle">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css" id="mainThemeStyle">
     
     <link rel="stylesheet" type="text/css" href="../../dark.css">
-    <link rel="stylesheet" type="text/css" href="../../light.css" id="themeStyle">
+    <link rel="stylesheet" type="text/css" href="../../main.css" id="themeStyle">
     <script src="../../storage.js"></script>
     
 
@@ -3078,7 +3077,7 @@
                     <span class="kw">let</span> <span class="ident">tmp</span> <span class="op">=</span> <span class="ident">is</span>.<span class="ident">read_bool</span>()<span class="question-mark">?</span>;
                     <span class="self">self</span>.<span class="ident">sync_log</span> <span class="op">=</span> <span class="ident">tmp</span>;
                 },
-                <span class="kw">_</span> <span class="op">=&gt;</span> {
+                _ <span class="op">=&gt;</span> {
                     ::<span class="ident">protobuf</span>::<span class="ident">rt</span>::<span class="ident">read_unknown_or_skip_group</span>(<span class="ident">field_number</span>, <span class="ident">wire_type</span>, <span class="ident">is</span>, <span class="self">self</span>.<span class="ident">mut_unknown_fields</span>())<span class="question-mark">?</span>;
                 },
             };
@@ -3162,7 +3161,7 @@
         <span class="ident">Entry</span>::<span class="ident">new</span>()
     }
 
-    <span class="kw">fn</span> <span class="ident">descriptor_static</span>(<span class="kw">_</span>: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Entry</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span> {
+    <span class="kw">fn</span> <span class="ident">descriptor_static</span>(_: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Entry</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span> {
         <span class="kw">static</span> <span class="kw-2">mut</span> <span class="ident">descriptor</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span><span class="op">&lt;</span>::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span><span class="op">&gt;</span> <span class="op">=</span> ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span> {
             <span class="ident">lock</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">ONCE_INIT</span>,
             <span class="ident">ptr</span>: <span class="number">0</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span>,
@@ -3170,27 +3169,27 @@
         <span class="kw">unsafe</span> {
             <span class="ident">descriptor</span>.<span class="ident">get</span>(<span class="op">||</span> {
                 <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">fields</span> <span class="op">=</span> ::<span class="ident">std</span>::<span class="ident">vec</span>::<span class="ident">Vec</span>::<span class="ident">new</span>();
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeEnum</span><span class="op">&lt;</span><span class="ident">EntryType</span><span class="op">&gt;&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeEnum</span><span class="op">&lt;</span><span class="ident">EntryType</span><span class="op">&gt;&gt;</span>(
                     <span class="string">&quot;entry_type&quot;</span>,
                     <span class="ident">Entry</span>::<span class="ident">get_entry_type_for_reflect</span>,
                     <span class="ident">Entry</span>::<span class="ident">mut_entry_type_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
                     <span class="string">&quot;term&quot;</span>,
                     <span class="ident">Entry</span>::<span class="ident">get_term_for_reflect</span>,
                     <span class="ident">Entry</span>::<span class="ident">mut_term_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
                     <span class="string">&quot;index&quot;</span>,
                     <span class="ident">Entry</span>::<span class="ident">get_index_for_reflect</span>,
                     <span class="ident">Entry</span>::<span class="ident">mut_index_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeBytes</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeBytes</span><span class="op">&gt;</span>(
                     <span class="string">&quot;data&quot;</span>,
                     <span class="ident">Entry</span>::<span class="ident">get_data_for_reflect</span>,
                     <span class="ident">Entry</span>::<span class="ident">mut_data_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeBool</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeBool</span><span class="op">&gt;</span>(
                     <span class="string">&quot;sync_log&quot;</span>,
                     <span class="ident">Entry</span>::<span class="ident">get_sync_log_for_reflect</span>,
                     <span class="ident">Entry</span>::<span class="ident">mut_sync_log_for_reflect</span>,
@@ -3376,7 +3375,7 @@
                     <span class="kw">let</span> <span class="ident">tmp</span> <span class="op">=</span> <span class="ident">is</span>.<span class="ident">read_uint64</span>()<span class="question-mark">?</span>;
                     <span class="self">self</span>.<span class="ident">term</span> <span class="op">=</span> <span class="ident">tmp</span>;
                 },
-                <span class="kw">_</span> <span class="op">=&gt;</span> {
+                _ <span class="op">=&gt;</span> {
                     ::<span class="ident">protobuf</span>::<span class="ident">rt</span>::<span class="ident">read_unknown_or_skip_group</span>(<span class="ident">field_number</span>, <span class="ident">wire_type</span>, <span class="ident">is</span>, <span class="self">self</span>.<span class="ident">mut_unknown_fields</span>())<span class="question-mark">?</span>;
                 },
             };
@@ -3451,7 +3450,7 @@
         <span class="ident">SnapshotMetadata</span>::<span class="ident">new</span>()
     }
 
-    <span class="kw">fn</span> <span class="ident">descriptor_static</span>(<span class="kw">_</span>: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">SnapshotMetadata</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span> {
+    <span class="kw">fn</span> <span class="ident">descriptor_static</span>(_: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">SnapshotMetadata</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span> {
         <span class="kw">static</span> <span class="kw-2">mut</span> <span class="ident">descriptor</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span><span class="op">&lt;</span>::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span><span class="op">&gt;</span> <span class="op">=</span> ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span> {
             <span class="ident">lock</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">ONCE_INIT</span>,
             <span class="ident">ptr</span>: <span class="number">0</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span>,
@@ -3459,17 +3458,17 @@
         <span class="kw">unsafe</span> {
             <span class="ident">descriptor</span>.<span class="ident">get</span>(<span class="op">||</span> {
                 <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">fields</span> <span class="op">=</span> ::<span class="ident">std</span>::<span class="ident">vec</span>::<span class="ident">Vec</span>::<span class="ident">new</span>();
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_singular_ptr_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeMessage</span><span class="op">&lt;</span><span class="ident">ConfState</span><span class="op">&gt;&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_singular_ptr_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeMessage</span><span class="op">&lt;</span><span class="ident">ConfState</span><span class="op">&gt;&gt;</span>(
                     <span class="string">&quot;conf_state&quot;</span>,
                     <span class="ident">SnapshotMetadata</span>::<span class="ident">get_conf_state_for_reflect</span>,
                     <span class="ident">SnapshotMetadata</span>::<span class="ident">mut_conf_state_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
                     <span class="string">&quot;index&quot;</span>,
                     <span class="ident">SnapshotMetadata</span>::<span class="ident">get_index_for_reflect</span>,
                     <span class="ident">SnapshotMetadata</span>::<span class="ident">mut_index_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
                     <span class="string">&quot;term&quot;</span>,
                     <span class="ident">SnapshotMetadata</span>::<span class="ident">get_term_for_reflect</span>,
                     <span class="ident">SnapshotMetadata</span>::<span class="ident">mut_term_for_reflect</span>,
@@ -3629,7 +3628,7 @@
                 <span class="number">2</span> <span class="op">=&gt;</span> {
                     ::<span class="ident">protobuf</span>::<span class="ident">rt</span>::<span class="ident">read_singular_message_into</span>(<span class="ident">wire_type</span>, <span class="ident">is</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>.<span class="ident">metadata</span>)<span class="question-mark">?</span>;
                 },
-                <span class="kw">_</span> <span class="op">=&gt;</span> {
+                _ <span class="op">=&gt;</span> {
                     ::<span class="ident">protobuf</span>::<span class="ident">rt</span>::<span class="ident">read_unknown_or_skip_group</span>(<span class="ident">field_number</span>, <span class="ident">wire_type</span>, <span class="ident">is</span>, <span class="self">self</span>.<span class="ident">mut_unknown_fields</span>())<span class="question-mark">?</span>;
                 },
             };
@@ -3698,7 +3697,7 @@
         <span class="ident">Snapshot</span>::<span class="ident">new</span>()
     }
 
-    <span class="kw">fn</span> <span class="ident">descriptor_static</span>(<span class="kw">_</span>: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Snapshot</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span> {
+    <span class="kw">fn</span> <span class="ident">descriptor_static</span>(_: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Snapshot</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span> {
         <span class="kw">static</span> <span class="kw-2">mut</span> <span class="ident">descriptor</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span><span class="op">&lt;</span>::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span><span class="op">&gt;</span> <span class="op">=</span> ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span> {
             <span class="ident">lock</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">ONCE_INIT</span>,
             <span class="ident">ptr</span>: <span class="number">0</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span>,
@@ -3706,12 +3705,12 @@
         <span class="kw">unsafe</span> {
             <span class="ident">descriptor</span>.<span class="ident">get</span>(<span class="op">||</span> {
                 <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">fields</span> <span class="op">=</span> ::<span class="ident">std</span>::<span class="ident">vec</span>::<span class="ident">Vec</span>::<span class="ident">new</span>();
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeBytes</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeBytes</span><span class="op">&gt;</span>(
                     <span class="string">&quot;data&quot;</span>,
                     <span class="ident">Snapshot</span>::<span class="ident">get_data_for_reflect</span>,
                     <span class="ident">Snapshot</span>::<span class="ident">mut_data_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_singular_ptr_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeMessage</span><span class="op">&lt;</span><span class="ident">SnapshotMetadata</span><span class="op">&gt;&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_singular_ptr_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeMessage</span><span class="op">&lt;</span><span class="ident">SnapshotMetadata</span><span class="op">&gt;&gt;</span>(
                     <span class="string">&quot;metadata&quot;</span>,
                     <span class="ident">Snapshot</span>::<span class="ident">get_metadata_for_reflect</span>,
                     <span class="ident">Snapshot</span>::<span class="ident">mut_metadata_for_reflect</span>,
@@ -4191,7 +4190,7 @@
                 <span class="number">12</span> <span class="op">=&gt;</span> {
                     ::<span class="ident">protobuf</span>::<span class="ident">rt</span>::<span class="ident">read_singular_proto3_bytes_into</span>(<span class="ident">wire_type</span>, <span class="ident">is</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>.<span class="ident">context</span>)<span class="question-mark">?</span>;
                 },
-                <span class="kw">_</span> <span class="op">=&gt;</span> {
+                _ <span class="op">=&gt;</span> {
                     ::<span class="ident">protobuf</span>::<span class="ident">rt</span>::<span class="ident">read_unknown_or_skip_group</span>(<span class="ident">field_number</span>, <span class="ident">wire_type</span>, <span class="ident">is</span>, <span class="self">self</span>.<span class="ident">mut_unknown_fields</span>())<span class="question-mark">?</span>;
                 },
             };
@@ -4323,7 +4322,7 @@
         <span class="ident">Message</span>::<span class="ident">new</span>()
     }
 
-    <span class="kw">fn</span> <span class="ident">descriptor_static</span>(<span class="kw">_</span>: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Message</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span> {
+    <span class="kw">fn</span> <span class="ident">descriptor_static</span>(_: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">Message</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span> {
         <span class="kw">static</span> <span class="kw-2">mut</span> <span class="ident">descriptor</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span><span class="op">&lt;</span>::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span><span class="op">&gt;</span> <span class="op">=</span> ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span> {
             <span class="ident">lock</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">ONCE_INIT</span>,
             <span class="ident">ptr</span>: <span class="number">0</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span>,
@@ -4331,62 +4330,62 @@
         <span class="kw">unsafe</span> {
             <span class="ident">descriptor</span>.<span class="ident">get</span>(<span class="op">||</span> {
                 <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">fields</span> <span class="op">=</span> ::<span class="ident">std</span>::<span class="ident">vec</span>::<span class="ident">Vec</span>::<span class="ident">new</span>();
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeEnum</span><span class="op">&lt;</span><span class="ident">MessageType</span><span class="op">&gt;&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeEnum</span><span class="op">&lt;</span><span class="ident">MessageType</span><span class="op">&gt;&gt;</span>(
                     <span class="string">&quot;msg_type&quot;</span>,
                     <span class="ident">Message</span>::<span class="ident">get_msg_type_for_reflect</span>,
                     <span class="ident">Message</span>::<span class="ident">mut_msg_type_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
                     <span class="string">&quot;to&quot;</span>,
                     <span class="ident">Message</span>::<span class="ident">get_to_for_reflect</span>,
                     <span class="ident">Message</span>::<span class="ident">mut_to_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
                     <span class="string">&quot;from&quot;</span>,
                     <span class="ident">Message</span>::<span class="ident">get_from_for_reflect</span>,
                     <span class="ident">Message</span>::<span class="ident">mut_from_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
                     <span class="string">&quot;term&quot;</span>,
                     <span class="ident">Message</span>::<span class="ident">get_term_for_reflect</span>,
                     <span class="ident">Message</span>::<span class="ident">mut_term_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
                     <span class="string">&quot;log_term&quot;</span>,
                     <span class="ident">Message</span>::<span class="ident">get_log_term_for_reflect</span>,
                     <span class="ident">Message</span>::<span class="ident">mut_log_term_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
                     <span class="string">&quot;index&quot;</span>,
                     <span class="ident">Message</span>::<span class="ident">get_index_for_reflect</span>,
                     <span class="ident">Message</span>::<span class="ident">mut_index_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_repeated_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeMessage</span><span class="op">&lt;</span><span class="ident">Entry</span><span class="op">&gt;&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_repeated_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeMessage</span><span class="op">&lt;</span><span class="ident">Entry</span><span class="op">&gt;&gt;</span>(
                     <span class="string">&quot;entries&quot;</span>,
                     <span class="ident">Message</span>::<span class="ident">get_entries_for_reflect</span>,
                     <span class="ident">Message</span>::<span class="ident">mut_entries_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
                     <span class="string">&quot;commit&quot;</span>,
                     <span class="ident">Message</span>::<span class="ident">get_commit_for_reflect</span>,
                     <span class="ident">Message</span>::<span class="ident">mut_commit_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_singular_ptr_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeMessage</span><span class="op">&lt;</span><span class="ident">Snapshot</span><span class="op">&gt;&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_singular_ptr_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeMessage</span><span class="op">&lt;</span><span class="ident">Snapshot</span><span class="op">&gt;&gt;</span>(
                     <span class="string">&quot;snapshot&quot;</span>,
                     <span class="ident">Message</span>::<span class="ident">get_snapshot_for_reflect</span>,
                     <span class="ident">Message</span>::<span class="ident">mut_snapshot_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeBool</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeBool</span><span class="op">&gt;</span>(
                     <span class="string">&quot;reject&quot;</span>,
                     <span class="ident">Message</span>::<span class="ident">get_reject_for_reflect</span>,
                     <span class="ident">Message</span>::<span class="ident">mut_reject_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
                     <span class="string">&quot;reject_hint&quot;</span>,
                     <span class="ident">Message</span>::<span class="ident">get_reject_hint_for_reflect</span>,
                     <span class="ident">Message</span>::<span class="ident">mut_reject_hint_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeBytes</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeBytes</span><span class="op">&gt;</span>(
                     <span class="string">&quot;context&quot;</span>,
                     <span class="ident">Message</span>::<span class="ident">get_context_for_reflect</span>,
                     <span class="ident">Message</span>::<span class="ident">mut_context_for_reflect</span>,
@@ -4560,7 +4559,7 @@
                     <span class="kw">let</span> <span class="ident">tmp</span> <span class="op">=</span> <span class="ident">is</span>.<span class="ident">read_uint64</span>()<span class="question-mark">?</span>;
                     <span class="self">self</span>.<span class="ident">commit</span> <span class="op">=</span> <span class="ident">tmp</span>;
                 },
-                <span class="kw">_</span> <span class="op">=&gt;</span> {
+                _ <span class="op">=&gt;</span> {
                     ::<span class="ident">protobuf</span>::<span class="ident">rt</span>::<span class="ident">read_unknown_or_skip_group</span>(<span class="ident">field_number</span>, <span class="ident">wire_type</span>, <span class="ident">is</span>, <span class="self">self</span>.<span class="ident">mut_unknown_fields</span>())<span class="question-mark">?</span>;
                 },
             };
@@ -4632,7 +4631,7 @@
         <span class="ident">HardState</span>::<span class="ident">new</span>()
     }
 
-    <span class="kw">fn</span> <span class="ident">descriptor_static</span>(<span class="kw">_</span>: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">HardState</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span> {
+    <span class="kw">fn</span> <span class="ident">descriptor_static</span>(_: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">HardState</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span> {
         <span class="kw">static</span> <span class="kw-2">mut</span> <span class="ident">descriptor</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span><span class="op">&lt;</span>::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span><span class="op">&gt;</span> <span class="op">=</span> ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span> {
             <span class="ident">lock</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">ONCE_INIT</span>,
             <span class="ident">ptr</span>: <span class="number">0</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span>,
@@ -4640,17 +4639,17 @@
         <span class="kw">unsafe</span> {
             <span class="ident">descriptor</span>.<span class="ident">get</span>(<span class="op">||</span> {
                 <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">fields</span> <span class="op">=</span> ::<span class="ident">std</span>::<span class="ident">vec</span>::<span class="ident">Vec</span>::<span class="ident">new</span>();
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
                     <span class="string">&quot;term&quot;</span>,
                     <span class="ident">HardState</span>::<span class="ident">get_term_for_reflect</span>,
                     <span class="ident">HardState</span>::<span class="ident">mut_term_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
                     <span class="string">&quot;vote&quot;</span>,
                     <span class="ident">HardState</span>::<span class="ident">get_vote_for_reflect</span>,
                     <span class="ident">HardState</span>::<span class="ident">mut_vote_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
                     <span class="string">&quot;commit&quot;</span>,
                     <span class="ident">HardState</span>::<span class="ident">get_commit_for_reflect</span>,
                     <span class="ident">HardState</span>::<span class="ident">mut_commit_for_reflect</span>,
@@ -4796,7 +4795,7 @@
                 <span class="number">2</span> <span class="op">=&gt;</span> {
                     ::<span class="ident">protobuf</span>::<span class="ident">rt</span>::<span class="ident">read_repeated_uint64_into</span>(<span class="ident">wire_type</span>, <span class="ident">is</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>.<span class="ident">learners</span>)<span class="question-mark">?</span>;
                 },
-                <span class="kw">_</span> <span class="op">=&gt;</span> {
+                _ <span class="op">=&gt;</span> {
                     ::<span class="ident">protobuf</span>::<span class="ident">rt</span>::<span class="ident">read_unknown_or_skip_group</span>(<span class="ident">field_number</span>, <span class="ident">wire_type</span>, <span class="ident">is</span>, <span class="self">self</span>.<span class="ident">mut_unknown_fields</span>())<span class="question-mark">?</span>;
                 },
             };
@@ -4862,7 +4861,7 @@
         <span class="ident">ConfState</span>::<span class="ident">new</span>()
     }
 
-    <span class="kw">fn</span> <span class="ident">descriptor_static</span>(<span class="kw">_</span>: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">ConfState</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span> {
+    <span class="kw">fn</span> <span class="ident">descriptor_static</span>(_: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">ConfState</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span> {
         <span class="kw">static</span> <span class="kw-2">mut</span> <span class="ident">descriptor</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span><span class="op">&lt;</span>::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span><span class="op">&gt;</span> <span class="op">=</span> ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span> {
             <span class="ident">lock</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">ONCE_INIT</span>,
             <span class="ident">ptr</span>: <span class="number">0</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span>,
@@ -4870,12 +4869,12 @@
         <span class="kw">unsafe</span> {
             <span class="ident">descriptor</span>.<span class="ident">get</span>(<span class="op">||</span> {
                 <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">fields</span> <span class="op">=</span> ::<span class="ident">std</span>::<span class="ident">vec</span>::<span class="ident">Vec</span>::<span class="ident">new</span>();
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_vec_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_vec_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
                     <span class="string">&quot;nodes&quot;</span>,
                     <span class="ident">ConfState</span>::<span class="ident">get_nodes_for_reflect</span>,
                     <span class="ident">ConfState</span>::<span class="ident">mut_nodes_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_vec_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_vec_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
                     <span class="string">&quot;learners&quot;</span>,
                     <span class="ident">ConfState</span>::<span class="ident">get_learners_for_reflect</span>,
                     <span class="ident">ConfState</span>::<span class="ident">mut_learners_for_reflect</span>,
@@ -5077,7 +5076,7 @@
                 <span class="number">4</span> <span class="op">=&gt;</span> {
                     ::<span class="ident">protobuf</span>::<span class="ident">rt</span>::<span class="ident">read_singular_proto3_bytes_into</span>(<span class="ident">wire_type</span>, <span class="ident">is</span>, <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>.<span class="ident">context</span>)<span class="question-mark">?</span>;
                 },
-                <span class="kw">_</span> <span class="op">=&gt;</span> {
+                _ <span class="op">=&gt;</span> {
                     ::<span class="ident">protobuf</span>::<span class="ident">rt</span>::<span class="ident">read_unknown_or_skip_group</span>(<span class="ident">field_number</span>, <span class="ident">wire_type</span>, <span class="ident">is</span>, <span class="self">self</span>.<span class="ident">mut_unknown_fields</span>())<span class="question-mark">?</span>;
                 },
             };
@@ -5155,7 +5154,7 @@
         <span class="ident">ConfChange</span>::<span class="ident">new</span>()
     }
 
-    <span class="kw">fn</span> <span class="ident">descriptor_static</span>(<span class="kw">_</span>: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">ConfChange</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span> {
+    <span class="kw">fn</span> <span class="ident">descriptor_static</span>(_: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">ConfChange</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span> {
         <span class="kw">static</span> <span class="kw-2">mut</span> <span class="ident">descriptor</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span><span class="op">&lt;</span>::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span><span class="op">&gt;</span> <span class="op">=</span> ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span> {
             <span class="ident">lock</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">ONCE_INIT</span>,
             <span class="ident">ptr</span>: <span class="number">0</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">MessageDescriptor</span>,
@@ -5163,22 +5162,22 @@
         <span class="kw">unsafe</span> {
             <span class="ident">descriptor</span>.<span class="ident">get</span>(<span class="op">||</span> {
                 <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">fields</span> <span class="op">=</span> ::<span class="ident">std</span>::<span class="ident">vec</span>::<span class="ident">Vec</span>::<span class="ident">new</span>();
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
                     <span class="string">&quot;id&quot;</span>,
                     <span class="ident">ConfChange</span>::<span class="ident">get_id_for_reflect</span>,
                     <span class="ident">ConfChange</span>::<span class="ident">mut_id_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeEnum</span><span class="op">&lt;</span><span class="ident">ConfChangeType</span><span class="op">&gt;&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeEnum</span><span class="op">&lt;</span><span class="ident">ConfChangeType</span><span class="op">&gt;&gt;</span>(
                     <span class="string">&quot;change_type&quot;</span>,
                     <span class="ident">ConfChange</span>::<span class="ident">get_change_type_for_reflect</span>,
                     <span class="ident">ConfChange</span>::<span class="ident">mut_change_type_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeUint64</span><span class="op">&gt;</span>(
                     <span class="string">&quot;node_id&quot;</span>,
                     <span class="ident">ConfChange</span>::<span class="ident">get_node_id_for_reflect</span>,
                     <span class="ident">ConfChange</span>::<span class="ident">mut_node_id_for_reflect</span>,
                 ));
-                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span><span class="kw">_</span>, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeBytes</span><span class="op">&gt;</span>(
+                <span class="ident">fields</span>.<span class="ident">push</span>(::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">accessor</span>::<span class="ident">make_simple_field_accessor</span>::<span class="op">&lt;</span>_, ::<span class="ident">protobuf</span>::<span class="ident">types</span>::<span class="ident">ProtobufTypeBytes</span><span class="op">&gt;</span>(
                     <span class="string">&quot;context&quot;</span>,
                     <span class="ident">ConfChange</span>::<span class="ident">get_context_for_reflect</span>,
                     <span class="ident">ConfChange</span>::<span class="ident">mut_context_for_reflect</span>,
@@ -5230,7 +5229,7 @@
         <span class="kw">match</span> <span class="ident">value</span> {
             <span class="number">0</span> <span class="op">=&gt;</span> ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span>::<span class="prelude-val">Some</span>(<span class="ident">EntryType</span>::<span class="ident">EntryNormal</span>),
             <span class="number">1</span> <span class="op">=&gt;</span> ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span>::<span class="prelude-val">Some</span>(<span class="ident">EntryType</span>::<span class="ident">EntryConfChange</span>),
-            <span class="kw">_</span> <span class="op">=&gt;</span> ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span>::<span class="prelude-val">None</span>
+            _ <span class="op">=&gt;</span> ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span>::<span class="prelude-val">None</span>
         }
     }
 
@@ -5242,7 +5241,7 @@
         <span class="ident">values</span>
     }
 
-    <span class="kw">fn</span> <span class="ident">enum_descriptor_static</span>(<span class="kw">_</span>: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">EntryType</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">EnumDescriptor</span> {
+    <span class="kw">fn</span> <span class="ident">enum_descriptor_static</span>(_: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">EntryType</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">EnumDescriptor</span> {
         <span class="kw">static</span> <span class="kw-2">mut</span> <span class="ident">descriptor</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span><span class="op">&lt;</span>::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">EnumDescriptor</span><span class="op">&gt;</span> <span class="op">=</span> ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span> {
             <span class="ident">lock</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">ONCE_INIT</span>,
             <span class="ident">ptr</span>: <span class="number">0</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">EnumDescriptor</span>,
@@ -5319,7 +5318,7 @@
             <span class="number">16</span> <span class="op">=&gt;</span> ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span>::<span class="prelude-val">Some</span>(<span class="ident">MessageType</span>::<span class="ident">MsgReadIndexResp</span>),
             <span class="number">17</span> <span class="op">=&gt;</span> ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span>::<span class="prelude-val">Some</span>(<span class="ident">MessageType</span>::<span class="ident">MsgRequestPreVote</span>),
             <span class="number">18</span> <span class="op">=&gt;</span> ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span>::<span class="prelude-val">Some</span>(<span class="ident">MessageType</span>::<span class="ident">MsgRequestPreVoteResponse</span>),
-            <span class="kw">_</span> <span class="op">=&gt;</span> ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span>::<span class="prelude-val">None</span>
+            _ <span class="op">=&gt;</span> ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span>::<span class="prelude-val">None</span>
         }
     }
 
@@ -5348,7 +5347,7 @@
         <span class="ident">values</span>
     }
 
-    <span class="kw">fn</span> <span class="ident">enum_descriptor_static</span>(<span class="kw">_</span>: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">MessageType</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">EnumDescriptor</span> {
+    <span class="kw">fn</span> <span class="ident">enum_descriptor_static</span>(_: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">MessageType</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">EnumDescriptor</span> {
         <span class="kw">static</span> <span class="kw-2">mut</span> <span class="ident">descriptor</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span><span class="op">&lt;</span>::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">EnumDescriptor</span><span class="op">&gt;</span> <span class="op">=</span> ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span> {
             <span class="ident">lock</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">ONCE_INIT</span>,
             <span class="ident">ptr</span>: <span class="number">0</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">EnumDescriptor</span>,
@@ -5393,7 +5392,7 @@
             <span class="number">0</span> <span class="op">=&gt;</span> ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span>::<span class="prelude-val">Some</span>(<span class="ident">ConfChangeType</span>::<span class="ident">AddNode</span>),
             <span class="number">1</span> <span class="op">=&gt;</span> ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span>::<span class="prelude-val">Some</span>(<span class="ident">ConfChangeType</span>::<span class="ident">RemoveNode</span>),
             <span class="number">2</span> <span class="op">=&gt;</span> ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span>::<span class="prelude-val">Some</span>(<span class="ident">ConfChangeType</span>::<span class="ident">AddLearnerNode</span>),
-            <span class="kw">_</span> <span class="op">=&gt;</span> ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span>::<span class="prelude-val">None</span>
+            _ <span class="op">=&gt;</span> ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span>::<span class="prelude-val">None</span>
         }
     }
 
@@ -5406,7 +5405,7 @@
         <span class="ident">values</span>
     }
 
-    <span class="kw">fn</span> <span class="ident">enum_descriptor_static</span>(<span class="kw">_</span>: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">ConfChangeType</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">EnumDescriptor</span> {
+    <span class="kw">fn</span> <span class="ident">enum_descriptor_static</span>(_: ::<span class="ident">std</span>::<span class="ident">option</span>::<span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="ident">ConfChangeType</span><span class="op">&gt;</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="lifetime">&#39;static</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">EnumDescriptor</span> {
         <span class="kw">static</span> <span class="kw-2">mut</span> <span class="ident">descriptor</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span><span class="op">&lt;</span>::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">EnumDescriptor</span><span class="op">&gt;</span> <span class="op">=</span> ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">Lazy</span> {
             <span class="ident">lock</span>: ::<span class="ident">protobuf</span>::<span class="ident">lazy</span>::<span class="ident">ONCE_INIT</span>,
             <span class="ident">ptr</span>: <span class="number">0</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> ::<span class="ident">protobuf</span>::<span class="ident">reflect</span>::<span class="ident">EnumDescriptor</span>,
