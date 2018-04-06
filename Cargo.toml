@@ -11,7 +11,7 @@ description = "Distributed state machine built on top of raft-rs"
 
 
 [dependencies]
-raft = "0.1.0"
+raft = "0.1.1"
 log = "0.4"
 
 [badges]
