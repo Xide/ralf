@@ -8,22 +8,22 @@ use state::State;
 use action::Action;
 
 /// State machine with a state of type `T`
-pub struct StateMachine<'a, T>
+pub struct StateMachine<T>
 where
-    T: 'a + Copy + Clone,
+    T: Copy + Clone,
 {
-    reducers: Vec<Box<&'a Reducer<T>>>,
+    reducers: Vec<Box<Reducer<T>>>,
     state: State<T>,
 }
 
-impl<'a, T> StateMachine<'a, T>
+impl<T> StateMachine<T>
 where
-    T: 'a + Copy + Clone,
+    T: Copy + Clone,
 {
     /// Create a new state machine from an initial state
     /// Note: The returned machine will be empty, so actions won't have any
     /// effects until reducers are added.
-    pub fn new(initial_state: T) -> StateMachine<'a, T> {
+    pub fn new(initial_state: T) -> StateMachine<T> {
         StateMachine {
             reducers: Vec::new(),
             state: State::new(&initial_state),
@@ -31,8 +31,8 @@ where
     }
 
     /// Add a reducer to the state machine
-    pub fn push_reducer(&mut self, reducer: &'a Reducer<T>) -> &mut Self {
-        self.reducers.push(Box::new(reducer));
+    pub fn push_reducer(&mut self, reducer: Box<Reducer<T>>) -> &mut Self {
+        self.reducers.push(reducer);
         self
     }
 
@@ -55,18 +55,18 @@ where
     }
 }
 
-impl<'a, T> fmt::Debug for StateMachine<'a, T>
+impl<T> fmt::Debug for StateMachine<T>
 where
-    T: 'a + Copy + Clone,
+    T: Copy + Clone,
 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "StateMachine {{ reducers: {:?} }}", self.reducers.len())
     }
 }
 
-impl<'a, T> fmt::Display for StateMachine<'a, T>
+impl<T> fmt::Display for StateMachine<T>
 where
-    T: 'a + Copy + Clone,
+    T: Copy + Clone,
 {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         write!(f, "StateMachine")
@@ -88,6 +88,8 @@ mod tests {
                 _ => state,
             }
         }
+
+        fn id(&self) -> &str { "increment" }
     }
 
     #[test]
@@ -100,7 +102,7 @@ mod tests {
     fn reducer_works() {
         let mut sm = StateMachine::new(0);
 
-        sm.push_reducer(&IncrementReducer {});
+        sm.push_reducer(Box::new(IncrementReducer {}));
 
         assert_eq!(sm.get_state(), 0);
         sm.process(&Action::new("increment", &[]));

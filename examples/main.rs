@@ -20,7 +20,10 @@ impl Reducer<u32> for IncrementReducer {
             _ => state,
         }
     }
+
+    fn id(&self) -> &str { "increment" }
 }
+
 
 /// Minimal example on the reducer flow
 /// This example does:
@@ -33,8 +36,11 @@ impl Reducer<u32> for IncrementReducer {
 fn main() {
     let mut sm = StateMachine::new(0);
 
-    sm.push_reducer(&IncrementReducer {})
-        .push_reducer(&LoggingReducer {});
+    sm.push_reducer(Box::new(IncrementReducer {}))
+        .push_reducer(Box::new(LoggingReducer::new(
+            // Watching for the "increment" id (defined in the implementation above)
+            "increment"
+        )));
 
     sm.process(&Action::new("invalid", &[]));
     assert_eq!(sm.get_state(), 0);

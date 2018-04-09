@@ -11,7 +11,7 @@ mod action;
 pub use action::Action;
 
 mod reducer;
-pub use reducer::{LoggingReducer, Reducer};
+pub use reducer::{Reducer, PureReducer, LoggingReducer};
 
 mod state_machine;
 pub use state_machine::StateMachine;
